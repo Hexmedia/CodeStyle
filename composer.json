@@ -24,18 +24,12 @@
   },
   "require": {
     "squizlabs/php_codesniffer": ">=2.0,<3",
-    "escapestudios/symfony2-coding-standard": "dev-master#2ee7c426c76160ae8c0df8321fb05b4468f55490"
+    "escapestudios/symfony2-coding-standard": "~2.9"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
   },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@github.com:kuczek/Symfony2-coding-standard-1.git"
-    }
-  ],
   "target-dir": "hexmedia/phpcs/Hexmedia"
 }
