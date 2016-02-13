@@ -1,0 +1,11 @@
+4c4
+<  * @copyright 2014-2016 Hexmedia.pl
+---
+>  * @copyright 2013-2016 Hexmedia.pl
+19,20c19,21
+<     public function __construct() {
+<         $this->a = "a"."c";
+---
+>     public function __construct()
+>     {
+>         $this->a = "a" . "c";

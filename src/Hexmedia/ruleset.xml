@@ -5,13 +5,9 @@
     <!-- There should not be any code in the bundle Resources directory. -->
     <exclude-pattern>*/Resources/*</exclude-pattern>
 
-    <rule ref="vendor/escapestudios/symfony2-coding-standard/Symfony2">
+    <rule ref="Symfony2">
         <exclude name="Symfony2.Commenting.ClassComment" />
     </rule>
-
-
-    <!-- There should not be any code in the bundle Resources directory. -->
-    <exclude-pattern>*/Resources/*</exclude-pattern>
 
     <!--
 
@@ -46,6 +42,11 @@
     <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.Scope.MemberVarScope"/>
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="spacing" value="1" />
+        </properties>
+    </rule>
 
     <!-- We provide our own subclass of PEAR's ClassComment and FunctionComment sniff, but these will do: -->
     <rule ref="PEAR.Commenting.InlineComment"/>
@@ -91,7 +92,8 @@
     </rule>
 
     <rule ref="Hexmedia.Commenting.ClassComment.SpacingBeforeTags">
-        <message>There should always be a description, followed by a blank line, before the tags of a class comment.</message>
+        <message>There should always be a description, followed by a blank line, before the tags of a class comment.
+        </message>
     </rule>
 
     <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
