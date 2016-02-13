@@ -1,8 +1,19 @@
 #!/bin/bash
 
+function clearMatch() {
+    found=`find ./Tests/Functional -path "$1"`
+
+    if [ "$found" != "" ] ; then
+        for file in $found
+        do
+            rm $file
+        done;
+    fi
+}
+
 function clearNow() {
-    find ./Tests/Functional -path "*.fixed.php" | xargs rm
-    find ./Tests/Functional -path "*.diff.new" | xargs rm
+    clearMatch "*.fixed.php"
+    clearMatch "*.diff.new"
 }
 
 #before cleanup
