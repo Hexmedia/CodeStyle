@@ -1,0 +1,9 @@
+4c4
+<  * @copyright 2014-2016 Hexmedisa.pl
+---
+>  * @copyright 2013-2016 Hexmedia.pl
+9a10,13
+> /**
+>  * Class SomeClass
+>  * @package Name\Space
+>  */
