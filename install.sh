@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -d vendor ]; then
+if [ -d "./vendor" ]; then
     vendor="vendor/"
 fi
 
