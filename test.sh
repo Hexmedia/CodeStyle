@@ -2,8 +2,18 @@
 
 verbose=0
 
+#TODO: change it to some more clever way
 if [ "$1" == "-v" ]; then
     verbose=1
+fi
+
+file_to_check=""
+if [ -f "./Tests/Functional/$1" ]; then
+    file_to_check=$1
+
+    if [ "$2" == "-v" ]; then
+        verbose=1
+    fi
 fi
 
 function clearMatch() {
@@ -22,11 +32,19 @@ function clearNow() {
     clearMatch "*.diff.new"
 }
 
+function exitIfError() {
+    if [ "$1" != "0" ] && [ "$1" != "1" ]; then
+        exit $1
+    fi
+}
+
 #before cleanup
 clearNow
 
-./vendor/bin/phpcs --standard=./src/Hexmedia/ ./Tests/Functional/ --extensions=php
-./vendor/bin/phpcbf --standard=./src/Hexmedia/ ./Tests/Functional --suffix=.fixed.php --exclude=*.diff
+./vendor/bin/phpcs --standard=./src/Hexmedia/ "./Tests/Functional/$file_to_check" --extensions=php
+exitIfError $?
+./vendor/bin/phpcbf --standard=./src/Hexmedia/ "./Tests/Functional/$file_to_check" --suffix=.fixed.php --exclude=*.diff
+exitIfError $?
 
 for fixed in `find ./Tests/Functional -path "*.fixed.php"`
 do
