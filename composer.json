@@ -26,10 +26,12 @@
     "squizlabs/php_codesniffer": ">=2.0,<3",
     "escapestudios/symfony2-coding-standard": "~2.9"
   },
+  "scripts": {
+    "post-install-cmd": "./install.sh"
+  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
-  },
-  "target-dir": "hexmedia/phpcs/Hexmedia"
+  }
 }
