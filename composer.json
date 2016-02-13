@@ -1,7 +1,7 @@
 {
   "name": "hexmedia/code-style",
   "type": "library",
-  "description": "Code stylem based on PSR2 and Symfony2 standards ",
+  "description": "Code style based on PSR2 and Symfony2 standards ",
   "keywords": [
     "code style"
   ],
