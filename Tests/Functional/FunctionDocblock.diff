@@ -1,0 +1,16 @@
+16c16
+<      * @param int$b
+---
+>      * @param int    $b
+17a18
+>      *
+26c27
+<      * @param int $a
+---
+>      * @param int    $a
+27a29
+>      *
+32c34
+< return $this;
+---
+>         return $this;

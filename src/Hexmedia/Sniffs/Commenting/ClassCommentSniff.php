@@ -1,6 +1,5 @@
 <?php
 
-
 if (class_exists('PHP_CodeSniffer_Tokenizers_Comment', true) === false) {
     $error = 'Class PHP_CodeSniffer_Tokenizers_Comment not found';
     throw new PHP_CodeSniffer_Exception($error);
@@ -17,7 +16,7 @@ class Hexmedia_Sniffs_Commenting_ClassCommentSniff extends Symfony2_Sniffs_Comme
      * Processes this test, when one of its tokens is encountered.
      *
      * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int $stackPtr The position of the current token
+     * @param int                  $stackPtr  The position of the current token
      *                                        in the stack passed in $tokens.
      *
      * @return void
@@ -49,16 +48,15 @@ class Hexmedia_Sniffs_Commenting_ClassCommentSniff extends Symfony2_Sniffs_Comme
                         "/**" . $phpcsFile->eolChar .
                         " * Class %s" . $phpcsFile->eolChar .
                         ($packageName ? sprintf(" * @package %s" . $phpcsFile->eolChar, $packageName) : '') .
-                        " */" . $phpcsFile->eolChar
-                        , $className
+                        " */" . $phpcsFile->eolChar,
+                        $className
                     );
 
-//                $phpcsFile->fixer->beginChangeset();
                 $phpcsFile->fixer->addContentBefore($stackPtr, $comment);
-//                $phpcsFile->fixer->endChangeset();
             }
 
             $phpcsFile->recordMetric($stackPtr, 'Class has doc comment', 'no');
+
             return;
         } else {
             $phpcsFile->recordMetric($stackPtr, 'Class has doc comment', 'yes');
@@ -80,12 +78,14 @@ class Hexmedia_Sniffs_Commenting_ClassCommentSniff extends Symfony2_Sniffs_Comme
                 // This is a comment directly after the first open tag,
                 // so probably a file comment.
                 $phpcsFile->addError('Missing class doc comment', $stackPtr, 'Missing');
+
                 return;
             }
         }
 
         if ($tokens[$commentEnd]['code'] === T_COMMENT) {
             $phpcsFile->addError('You must use "/**" style comments for a class comment', $stackPtr, 'WrongStyle');
+
             return;
         }
 

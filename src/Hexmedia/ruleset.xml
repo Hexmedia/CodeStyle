@@ -51,6 +51,10 @@
     <!-- We provide our own subclass of PEAR's ClassComment and FunctionComment sniff, but these will do: -->
     <rule ref="PEAR.Commenting.InlineComment"/>
 
+    <rule ref="Hexmedia.Commenting.FileComment.MissingVersion">
+        <severity>0</severity>
+    </rule>
+
     <!-- Import Zend coding standard (which in turn imports PEAR) -->
     <rule ref="Zend">
         <!-- but exclude their code analyzer -->
@@ -83,24 +87,16 @@
         <severity>0</severity>
     </rule>
 
-    <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
+    <rule ref="Hexmedia.Commenting.FunctionComment.MissingParamComment">
         <severity>0</severity>
     </rule>
 
-    <rule ref="Symfony2.Commenting.FunctionComment.SpacingBeforeTags">
+    <rule ref="Hexmedia.Commenting.FunctionComment.SpacingBeforeTags">
         <severity>0</severity>
     </rule>
 
     <rule ref="Hexmedia.Commenting.ClassComment.SpacingBeforeTags">
         <message>There should always be a description, followed by a blank line, before the tags of a class comment.
         </message>
-    </rule>
-
-    <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
-        <severity>0</severity>
-    </rule>
-
-    <rule ref="Symfony2.Commenting.FunctionComment.SpacingBeforeTags">
-        <severity>0</severity>
     </rule>
 </ruleset>
