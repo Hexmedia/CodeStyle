@@ -1,0 +1,13 @@
+4c4
+<  * @copyright 2014-2016 hexmedia.pl
+---
+>  * @copyright 2013-2016 Hexmedia.pl
+8a9,12
+> /**
+>  * Class IfElseIf
+>  * @package Name\Space
+>  */
+15c19
+<         } else if ("a" == "c") {
+---
+>         } elseif ("a" == "c") {

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+verbose=0
+
+if [ "$1" == "-v" ]; then
+    verbose=1
+fi
+
 function clearMatch() {
     found=`find ./Tests/Functional -path "$1"`
 
@@ -30,8 +36,16 @@ do
 
     diff $original $fixed > "$diff.new"
 
-    if [ "`diff ""$diff "$diff.new"`" != "" ] ; then
-        echo -e "\e[35mWrong diffrence between fixed and expected.\e[0m"
+    diffrenece="`diff ""$diff "$diff.new"`"
+
+    if [ "$diffrenece" != "" ] ; then
+        echo -e "\e[35mWrong diffrence between fixed and expected in $original.\e[0m"
+
+        if [ $verbose -gt 0 ]; then
+            echo -e "\e[32mDiffrence is:\e[0m"
+            echo -e "\e[33m$diffrenece\e[0m"
+        fi
+
         exit 1;
     fi
 done
