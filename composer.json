@@ -19,7 +19,8 @@
   },
   "autoload": {
     "classmap": [
-      "src/Hexmedia/Sniffs"
+      "src/Hexmedia/Sniffs",
+      "src/Composer"
     ]
   },
   "require": {
@@ -27,7 +28,7 @@
     "escapestudios/symfony2-coding-standard": "~2.9"
   },
   "scripts": {
-    "post-autoload-dump": "./install.sh"
+    "post-autoload-dump": "Hexmedia\\CodeStyle\\Composer\\PhpCSInstall::postAutoloadDump"
   },
   "extra": {
     "branch-alias": {
