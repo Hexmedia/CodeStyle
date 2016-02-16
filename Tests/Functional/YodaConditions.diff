@@ -1,0 +1,77 @@
+<?php
+/**
+ * @author    Krystian Kuczek <krystian@hexmedia.pl>
+ * @copyright 2013-2016 Hexmedia.pl
+ * @license   @see LICENSE
+ */
+
+namespace Name\Space;
+
+/**
+ * Class YodaStyleFix
+ *
+ * @package Name\Space
+ */
+class YodaStyleFix
+{
+    /**
+     * @return bool
+     */
+    public function ifElseString()
+    {
+        $b = 1;
+
+        if ($b == "a") {
+            return true;
+        } elseif ($b != "a") {
+            return true;
+        } else if ($b === "a") {
+            return true;
+        }
+    }
+
+    /**
+     * @return bool
+     */
+    public function inlineString()
+    {
+        $b = 1;
+
+        return $b >= "a";
+    }
+    /**
+     * @return bool
+     */
+    public function ifElseBool()
+    {
+        $b = 1;
+
+        if ($b < true) {
+            return true;
+        } elseif ($b <= false) {
+            return true;
+        } else if ($b > true) {
+            return true;
+        }
+
+        if ($b + 2 > true) {
+            return false;
+        }
+
+        if (
+            $b + 2 > true
+        ) {
+            return true;
+        }
+    }
+
+    /**
+     * @return bool
+     */
+    public function inlineBool()
+    {
+        $b = 1;
+
+        return $b === true;
+    }
+}
